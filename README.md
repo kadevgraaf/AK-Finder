@@ -4,7 +4,7 @@
 
 The RouLADE (Retrieve Linked Architectural Data Example) tool sends queries to a SPARQL query endpoint of a semantic wiki (ArchiMind currently, see below and https://github.com/kadevgraaf/ArchiMind ). 
 The SPARQL queries retrieve architectural knowledge to support design and development activities and answer questions from an approach for architecture documentation review by the SEI.
-The RouLADE exemplifies retrieval of architectural knowledge as Linked Open Data, and can be freely adapted/reused under the GPL license.
+The RouLADE tool exemplifies retrieval of architectural knowledge as Linked Open Data, and can be freely adapted/reused under the GPL license.
 
 Archimind is a semantic wiki for Software Architecture (SA) documentation management and retrieval and was adapted from [OntoWiki] (http://aksw.org/Projects/OntoWiki.html) version 0.9.5. A concise overview of (part of the) adaptations and their rationale is given in paper [Klaas Andries de Graaf - "Annotating Software Documentation in Semantic Wikis](http://kadegraaf.nl/Annotating%20Software%20Documentation%20in%20Semantic%20Wikis%20-%20Klaas%20Andries%20de%20Graaf.pdf). See below for more references.
 [https://github.com/AKSW/OntoWiki/wiki] provides detailed installation instructions for OntoWiki. These instructions also apply to the installation of ArchiMind.
