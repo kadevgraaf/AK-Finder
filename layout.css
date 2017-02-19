@@ -1,0 +1,153 @@
+/*copyright: http://cssbutton.com/forms */
+.hide {
+	display: none;
+}
+.input {
+    border: 1px solid #006;
+    background: #ffc;
+    font-size: 16px;
+}
+.input:hover {
+    border: 1px solid #f00;
+    background: #ff6;
+}
+.button {
+    border: 1px solid #006;
+    background: #ccf;
+    font-size: 17px;
+}
+.button-groot {
+    border: 1px solid #006;
+    background: #ccf;
+     font-size: 19px;
+}
+.button:hover {
+    border: 1px solid #f00;
+    background: #eef;
+}
+label {
+    display: block;
+    width: 150px;
+    float: left;
+    margin: 2px 4px 6px 4px;
+    text-align: right;
+}
+br { clear: left; }
+
+.CSSTableGenerator {
+	margin:0px;padding:0px;
+	width:100%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	overflow:hidden;
+	word-wrap:break-word;
+	table-layout:fixed;
+
+	
+	-moz-border-radius-bottomleft:1px;
+	-webkit-border-bottom-left-radius:1px;
+	border-bottom-left-radius:1px;
+	
+	-moz-border-radius-bottomright:1px;
+	-webkit-border-bottom-right-radius:1px;
+	border-bottom-right-radius:1px;
+	
+	-moz-border-radius-topright:1px;
+	-webkit-border-top-right-radius:1px;
+	border-top-right-radius:1px;
+	
+	-moz-border-radius-topleft:1px;
+	-webkit-border-top-left-radius:1px;
+	border-top-left-radius:1px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:85%;
+	height:100%;
+	margin:0px;padding:0px;
+	overflow:hidden;
+	word-wrap:break-word;
+	table-layout:fixed;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:1px;
+	-webkit-border-bottom-right-radius:1px;
+	border-bottom-right-radius:1px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:1px;
+	-webkit-border-top-left-radius:1px;
+	border-top-left-radius:1px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:1px;
+	-webkit-border-top-right-radius:1px;
+	border-top-right-radius:1px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:1px;
+	-webkit-border-bottom-left-radius:1px;
+	border-bottom-left-radius:1px;
+}.CSSTableGenerator tr:hover td{
+	
+}
+.CSSTableGenerator tr:nth-child(odd){ background-color:#aad4ff; }
+.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:9px;
+	/*font-family:Times New Roman;*/
+    font-size: 17px;
+	font-weight:normal;
+	color:#000000;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+		background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+	background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
+
+	background-color:#005fbf;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:17px;
+	/*font-family:Times New Roman;*/
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+	background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
+
+	background-color:#005fbf;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+.multiselect {
+    width:20em;
+    height:15em;
+    border:solid 1px #c0c0c0;
+    overflow:auto;
+}
+ 
+.multiselect label {
+    display:block;
+}
+ 
+.multiselect-on {
+    color:#ffffff;
+    background-color:#000099;
+}
