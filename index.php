@@ -7,11 +7,11 @@ Use of sparqllib.php under LGPL license
 <!DOCTYPE html>
 <html>
 <head>
-<title>RouLADE - Index</title>
+<title>AK-Finder - Index</title>
 <link href="layout.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
 </head>
 <body>
-<center><h2>RouLADE - Retrieve Linked Architectural Data Example</h2></center>
+<center><h2>AK-Finder - Retrieve Linked Architectural Data Example</h2></center>
 <div id='menu' style="background-color: lightgreen;">
 	<center>
 	<table style="width:100%; text-align: center;">
