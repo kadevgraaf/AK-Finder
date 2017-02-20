@@ -8,7 +8,7 @@ Use of sparqllib.php under LGPL license
 <!DOCTYPE html>
 <html>
 <head>
-<title>ArchiMind SPARQL Query Endpoint Demo</title>
+<title>AK-Finder - Review interface</title>
 <link href="layout.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
 <script src="jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
@@ -153,8 +153,8 @@ Use of sparqllib.php under LGPL license
 </script>
 </head>
 <body>
-<center><h2>RouLADE - Retrieve Linked Architectural Data Example</h2></center>
-<div id='menu' style="background-color: lightgreen;">
+<center><h2>AK-Finder - Retrieve Linked Architectural Data Example</h2></center>
+<div id='menu' style="background-color: lightgreen;  font-size: 150%;">
 	<center>
 	<table style="width:100%; text-align: center;">
 		<th>

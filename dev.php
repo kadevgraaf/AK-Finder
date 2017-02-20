@@ -42,7 +42,7 @@ $fields = sparql_field_array($result);
 <!DOCTYPE html>
 <html>
 <head>
-<title>ArchiMind SPARQL Query Endpoint Demo</title>
+<title>AK-Finder - Development interface</title>
 <link href="layout.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
 <script src="jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
@@ -209,8 +209,8 @@ var CASE4 = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/
 </script>
 </head>
 <body>
-<center><h2>RouLADE - Retrieve Linked Architectural Data Example</h2></center>
-<div id='menu' style="background-color: lightgreen;">
+<center><h2>AK-Finder - Retrieve Linked Architectural Data Example</h2></center>
+<div id='menu' style="background-color: lightgreen;  font-size: 150%;">
 	<center>
 	<table style="width:100%; text-align: center;">
 		<th>
@@ -222,7 +222,7 @@ var CASE4 = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/
 	</table>
 	<center>
 </div>
-<div id='casediv' style="background-color: lightgreen;">
+<div id='casediv' style="background-color: lightblue;">
 	<h2>Development interface</h2>
 	<b>Tasks</b> <br />
 	<ul>
