@@ -126,16 +126,7 @@ $fields = sparql_field_array($result);
 "OPTIONAL{?Req AKO:addressed_by ?decision}. \n" +
 "FILTER(!bound(?decision))} \n" ;
 		if (question == 7){$('#query').val(D2);}
-		//=============================Question 3 - patterns with context - LOD===================
-		var D3 = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/sadocontology1.owl:> \n" +
-"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
-"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n" +
-"SELECT * \n" +
-"WHERE { ?uri rdf:type AKO:Pattern .  \n" +
-"?uri AKO:description ?description .  \n" +
-"?uri AKO:knowledge_is_located_in ?wikipage .  \n" +
-"?uri rdf:seeAlso ?DBpedia}  \n" ;
-		if (question == 8){$('#query').val(D3);}		
+	
 		//=============================Other queries================
 		var X1 = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/sadocontology1.owl:> \n" +
 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
@@ -153,6 +144,50 @@ $fields = sparql_field_array($result);
     	//$('#submit').click();
  		
 	}
+	
+	//=============================retrieve classes===================
+	function selectquery()
+	{
+		var selectquery = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/sadocontology1.owl:> \n" +
+							"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
+							"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n" +
+							"PREFIX owl: <http://www.w3.org/2002/07/owl#> \n" +
+							"SELECT ?uri ?name \n" +
+							"WHERE { ?uri a owl:Class .  \n" +
+							"?uri rdfs:label ?name . }  \n" ;
+		$('#query').val(selectquery);	
+    	var casus = 'selectClasses';
+    	send_query(selectquery, casus);
+	}	
+	//=============================retrieve instances of class===================
+	function instancequery()
+	{
+		var instancequery = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/sadocontology1.owl:> \n" +
+		"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
+		"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n" +
+		"SELECT ?name ?uri \n" +
+		"WHERE { ?uri rdf:type AKO:"+$('#selectClasses').val()+" .  \n" +
+		"?uri rdfs:label ?name . }  \n" ;
+		$('#query').val(instancequery);	
+    	var casus = 'instancequery';
+    	send_query(instancequery, casus);	
+	}
+	//=============================retrieve details about instances===================
+	function detailsquery(instance)
+	{
+		var detailsquery = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/sadocontology1.owl:> \n" +
+		"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
+		"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n" +
+		"SELECT * \n" +
+		"WHERE { AKO:"+instance+" rdfs:label ?selected_instance .  \n" +
+		//"OPTIONAL{ ?value_or_Related_AK ?Object_or_data_property AKO:"+instance+" . } \n" +
+		"AKO:"+instance+" ?Object_or_data_property ?value_or_Related_AK . }  \n" ;
+		$('#query').val(detailsquery);	
+    	var casus = 'detailsquery';
+    	//alert(detailsquery);
+    	send_query(detailsquery, casus);	
+	}		
+
     	function send_query(query, casus)
     	{
 	    	if (query = 'custom')
@@ -167,17 +202,26 @@ $fields = sparql_field_array($result);
 						beforeSend: function(){},
 						complete: function(){}, 
 							success: function(html){
-									$("#resulttable").html(html);
-									$("#resulttable").show("slow"); 
+									if (casus == 'selectClasses'){$("#selectClassesField").html(html);}
+									else
+									{
+										$("#resulttable").html(html);
+										$("#resulttable").show("slow"); 
+									}
 						}
 					}); //close $.ajax(		
 						//+"&voornaam="+voornaam+"&naam="+naam+"&adres="+adres+"&geslacht="+geslacht+"&wijknr="+wijknr+"&activiteit="+activiteit+"&beroep="+beroep+"&telefoonnummer="+telefoonnummer+"&toelichting="+toelichting,
 		}	
 	
 </script>
+<script type="text/javascript">
+	$(function() {
+		selectquery();
+	});
+</script>
 </head>
 <body>
-<center><h2>AK-Finder - Retrieve Linked Architectural Data Example</h2></center>
+<center><h2>AK-Finder - Architectural Knowledge Finder</h2></center>
 <div id='menu' style="background-color: lightgreen;  font-size: 150%;">
 <center>
 <table style="width:100%; text-align: center;">
@@ -201,18 +245,11 @@ $fields = sparql_field_array($result);
 	<ul>
 		<li>
 		<b>Retrieve Architectural Knowledge of type/class</b>
-			 <select>
-			  <option value="Class1">Class1</option>
-			  <option value="Class2">Class2</option>
-			  <option value="Class3">Class3</option>
-			  <option value="Class4">Class4</option>
-			</select> 
+			<span id="selectClassesField"></span><input type="button" class="button"  value="Query" onclick="instancequery();">
 		</li>
 	</ul>
 	
 		<br \>
-	<b>Retrieve Architectural Knowledge about instances</b>
-	?subject ?predicate ?object
 	
 	
 	<div id="resulttable">

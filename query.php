@@ -162,6 +162,62 @@ if ($_POST['case'] == 'selectQ2' || $_POST['case'] == 'selectQ4')
 	}
 	echo "</select>";
 }
+else if ($_POST['case'] == 'selectClasses')
+{
+	echo "<select id='selectClasses'>";
+	
+	while( $row = sparql_fetch_array( $result ) )
+	{
+		print "<option ";
+		foreach( $fields as $field )
+		{
+			if(strpos($row[$field], "ttp:") !== false)
+		  	{
+			  	print "value='" . substr($row[$field], (strpos($row[$field], ".owl:")+ 5)) . "'>";		  	
+			}
+		  	//<a href='".$row[$field] . "' target='_blank'>" . $row[$field] . "</a></td>";
+		  else
+		  	{print "$row[$field]";}
+	  	}
+		print "</option>";
+	}
+	echo "</select>";
+}
+else if ($_POST['case'] == 'instancequery')
+{
+	
+	$result = sparql_query($query);
+	$fields = sparql_field_array($result);
+	//}
+?>
+	<b>Results (<?php echo sparql_num_rows( $result ); ?>): <input class="button" type="button" id="editor" name="editor" value="View and Adapt SPARQL Query" onclick="$('#sendquery').focus()"></b>
+<?php	
+	//print "<p>Number of results: ".sparql_num_rows( $result )." results.</p>";
+	print "<table class='CSSTableGenerator' border='1'>";
+	print "<tr>";
+	foreach( $fields as $field )
+	{
+		print "<th>$field</th>";
+	}
+	print "<th>More information</th>";
+	print "</tr>";
+	while( $row = sparql_fetch_array( $result ) )
+	{
+		print "<tr>";
+
+		foreach( $fields as $field )
+		{
+		  if(strpos($row[$field], "ttp:") !== false)
+		  	{print "<td><a href='".$row[$field] . "' target='_blank'>" . $row[$field] . "</a></td>";
+		  		?><td><input type="button" class="button"  value="Retrieve more information and related AK" onclick="detailsquery('<?php echo substr($row[$field], (strpos($row[$field], ".owl:")+ 5)) ?>')"><br \></td><?php
+		  	}
+		  else
+		  	{print "<td>$row[$field]</td>";}
+		}
+		print "</tr>";
+	}
+	print "</table>";
+}
 else{
 	//	echo ' <br \>- <a href="#" onclick="predefined(12);">[find related requirements in ArchiMind]</a> <br \>- <a href="#" onclick="predefined(13);">[find related decisions in ArchiMind]</a>';
 	//

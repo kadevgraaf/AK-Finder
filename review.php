@@ -106,7 +106,6 @@ Use of sparqllib.php under LGPL license
 	}
 	function selectquery()
 	{
-//=============================Select box for finding non-functional requirements===================
 		var selectquery = "PREFIX AKO: <http://www.archimind.nl/archimindLOD/index.php/view/r/sadocontology1.owl:> \n" +
 							"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
 							"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n" +
@@ -117,7 +116,7 @@ Use of sparqllib.php under LGPL license
     	var casus = 'selectQ2';
     	send_query(query, casus);
     	var casus = 'selectQ4';
-    	send_query(query, casus);    	
+    	send_query(selectquery, casus);    	
 	}	
     	function send_query(query, casus)
     	{
@@ -153,7 +152,7 @@ Use of sparqllib.php under LGPL license
 </script>
 </head>
 <body>
-<center><h2>AK-Finder - Retrieve Linked Architectural Data Example</h2></center>
+<center><h2>AK-Finder - Architectural Knowledge Finder</h2></center>
 <div id='menu' style="background-color: lightgreen;  font-size: 150%;">
 	<center>
 	<table style="width:100%; text-align: center;">
